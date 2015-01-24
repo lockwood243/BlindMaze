@@ -7,12 +7,18 @@
 //
 
 #import "MazeViewController.h"
+#import "MazeView.h"
 
 @interface MazeViewController ()
 
 @end
 
 @implementation MazeViewController
+
+- (void)loadView
+{
+    self.view = [[MazeView alloc] initWithFrame:CGRectZero];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

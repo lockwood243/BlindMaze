@@ -10,9 +10,4 @@
 
 @interface MazeViewController : UIViewController
 
-- (void)loadView
-{
-    self.view = [[DrawView alloc] initWithFrame:CGRectZero];
-}
-
 @end
