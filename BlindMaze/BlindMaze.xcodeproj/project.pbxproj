@@ -426,6 +426,7 @@
 				346A13F21A735E9F00E6786E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		346A13F31A735E9F00E6786E /* Build configuration list for PBXNativeTarget "BlindMazeTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +435,7 @@
 				346A13F51A735E9F00E6786E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

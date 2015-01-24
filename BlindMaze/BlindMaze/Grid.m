@@ -20,6 +20,11 @@
     return self;
 }
 
+-(NSMutableArray *) pixelPointsArray{
+    if(!_pixelPointsArray)_pixelPointsArray = [[NSMutableArray alloc]init ];
+    return _pixelPointsArray;
+}
+
 -(int)playersTouchX:(int)x TouchY:(int)y wasATap:(bool)tap{
     bool start = (x < 100 && x > 75 && y < 10 && y > 0); //change according to values of box
     if (start) self.hasCollided = false;

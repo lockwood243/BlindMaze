@@ -95,7 +95,7 @@
         CGPoint pointOnScreen = [t.view convertPoint:point fromView:nil];
         NSLog(@"Point - %f, %f", pointOnScreen.x, pointOnScreen.y);
         NSLog(@"Touch");
-        
+        self.backgroundColor = [self randomColor];
         if ((pointOnScreen.x < 100 || pointOnScreen.x > 300)) {
             //self.backgroundColor = [UIColor blackColor];
         }
@@ -116,6 +116,18 @@
 
     
     [self setNeedsDisplay];
+}
+
+/*Implement a better color selection method, taking y position as a parameter
+ */
+-(UIColor *)randomColor
+{
+    double red = arc4random() % 255 / 255.0;
+    double green = arc4random() % 255 / 255.0;
+    double blue = arc4random() % 255 / 255.0;
+    UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    NSLog(@"%@", color);
+    return color;
 }
 
 
