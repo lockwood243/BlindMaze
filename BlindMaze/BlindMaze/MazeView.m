@@ -78,6 +78,7 @@
     [self setNeedsDisplay];
 }
 
+
 - (void)touchesMoved:(NSSet *)touches
            withEvent:(UIEvent *)event
 {
@@ -89,6 +90,15 @@
         Player1 *player1 = self.linesInProgress[key];
         
         player1.location = [t locationInView:self];
+        
+        CGPoint point = [t locationInView:t.view];
+        CGPoint pointOnScreen = [t.view convertPoint:point fromView:nil];
+        NSLog(@"Point - %f, %f", pointOnScreen.x, pointOnScreen.y);
+        NSLog(@"Touch");
+        
+        if ((pointOnScreen.x < 100 || pointOnScreen.x > 300)) {
+            //self.backgroundColor = [UIColor blackColor];
+        }
     }
     
     
@@ -108,12 +118,14 @@
     [self setNeedsDisplay];
 }
 
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
 shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)other
 {
     if (gestureRecognizer == self.moveRecognizer) {
         return YES;
     }
+    
     return NO;
 }
 
