@@ -8,6 +8,7 @@
 
 #import "MazeView.h"
 #import "Player1.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface MazeView () <UIGestureRecognizerDelegate>
 
@@ -90,6 +91,20 @@
         player1.location = [t locationInView:self];
     }
     
+    
+    // Set and if statement related to the range of our path
+    if([[UIDevice currentDevice].model isEqualToString:@"iPhone"])
+    {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+       
+    }
+    else
+    {
+        // Not an iPhone: so doesn't have vibrate
+    }
+    
+
+    
     [self setNeedsDisplay];
 }
 
@@ -107,7 +122,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)other
 {
     NSLog(@"Recognized tap");
     
-    CGPoint point = [gr locationInView:self];
+    CGPoint point = [gr locationInView:self]; //This point is the location of our single tap
         
     [self setNeedsDisplay];
 }
